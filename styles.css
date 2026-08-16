@@ -800,3 +800,223 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* --- PROJECTS SHOWCASE SECTION --- */
+#projects {
+    padding: 100px 0;
+    background-color: var(--bg-surface);
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+/* Navegación por pestañas */
+.industry-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.industry-tab {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: var(--text-muted);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.industry-tab i {
+    color: var(--secondary);
+}
+
+.industry-tab:hover {
+    border-color: var(--secondary);
+    color: var(--text-light);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.industry-tab.active {
+    background: var(--secondary);
+    color: var(--bg-dark);
+    border-color: var(--secondary);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    font-weight: 700;
+}
+
+.industry-tab.active i {
+    color: var(--bg-dark);
+}
+
+/* --- COLORES PERSONALIZADOS PARA BOTONES DE INDUSTRIAS --- */
+
+/* Pestaña Izquierda: Biotechnology & Pharma (AMARILLO) */
+.industry-tab[data-tab="biotech"] i {
+    color: var(--smartek-yellow);
+}
+.industry-tab[data-tab="biotech"]:hover {
+    border-color: var(--smartek-yellow);
+    color: var(--text-light);
+    box-shadow: 0 0 15px rgba(245, 166, 35, 0.25);
+}
+.industry-tab[data-tab="biotech"].active {
+    background: var(--smartek-yellow);
+    color: var(--bg-dark);
+    border-color: var(--smartek-yellow);
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.4);
+}
+.industry-tab[data-tab="biotech"].active i {
+    color: var(--bg-dark);
+}
+
+/* Pestaña Centro: Medical Devices (AZUL) */
+.industry-tab[data-tab="medtech"] i {
+    color: #38bdf8;
+}
+.industry-tab[data-tab="medtech"]:hover {
+    border-color: #38bdf8;
+    color: var(--text-light);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+.industry-tab[data-tab="medtech"].active {
+    background: #38bdf8;
+    color: var(--bg-dark);
+    border-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+.industry-tab[data-tab="medtech"].active i {
+    color: var(--bg-dark);
+}
+
+/* Pestaña Derecha: Process & Manufacturing (CIAN) */
+.industry-tab[data-tab="industrial"] i {
+    color: var(--secondary);
+}
+.industry-tab[data-tab="industrial"]:hover {
+    border-color: var(--secondary);
+    color: var(--text-light);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+}
+.industry-tab[data-tab="industrial"].active {
+    background: var(--secondary);
+    color: var(--bg-dark);
+    border-color: var(--secondary);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+.industry-tab[data-tab="industrial"].active i {
+    color: var(--bg-dark);
+}
+
+/* Ocultar paneles inactivos por defecto */
+.project-panel {
+    display: none;
+}
+
+.project-panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lista de Tarjetas de Proyectos */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-left: 4px solid var(--secondary);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    transition: var(--transition);
+}
+
+.project-item:hover {
+    border-color: var(--smartek-yellow);
+    border-left-color: var(--smartek-yellow);
+    box-shadow: 0 0 25px rgba(245, 166, 35, 0.15);
+    transform: translateX(6px);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.project-header h3 {
+    font-size: 1.35rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Insignias de Disciplina (Controls, Infrastructure, Integration) */
+.project-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-controls {
+    background: rgba(245, 166, 35, 0.15);
+    color: var(--smartek-yellow);
+    border: 1px solid var(--smartek-yellow);
+}
+
+.badge-infrastructure {
+    background: rgba(0, 119, 182, 0.2);
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+}
+
+.badge-integration {
+    background: rgba(0, 240, 255, 0.15);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.project-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* Separación para las etiquetas de tecnología */
+.project-tech-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.project-tech-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

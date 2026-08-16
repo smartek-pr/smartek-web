@@ -117,3 +117,26 @@ if (contactForm) {
         }
     });
 }
+
+// --- INDUSTRY TABS SWITCHER FOR PROJECTS SECTION ---
+const industryTabs = document.querySelectorAll('.industry-tab');
+const projectPanels = document.querySelectorAll('.project-panel');
+
+industryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remover clase activa de todas las pestañas
+        industryTabs.forEach(t => t.classList.remove('active'));
+        // Remover clase activa de todos los paneles
+        projectPanels.forEach(p => p.classList.remove('active'));
+
+        // Activar la pestaña cliqueada
+        tab.classList.add('active');
+
+        // Mostrar el panel correspondiente
+        const targetTab = tab.getAttribute('data-tab');
+        const activePanel = document.getElementById(`tab-${targetTab}`);
+        if (activePanel) {
+            activePanel.classList.add('active');
+        }
+    });
+});
